@@ -1,24 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
-echo "You are happy?"
+echo "Are you happy today?"
 read answer
 
 if [ "$answer" = "yes" ]; then
-   echo "Smile :)"
+   echo "Awesome, keep smiling :)"
 else
-   echo "Still Smile :)"
+   echo "Smile anyway :)"
 fi
 
-# here are the other string comparison operators
-# != , -n (not an empty string) , -z (an empty string)
-
-# exercise: write a script that prints whether today is
-# the weekend or not
-echo "Which day of a week is today?"
+echo "Which day of the week is today?"
 read day
-if [[ ${day,,} == "saturday" ]] | [[ ${day,,} == "sunday" ]]
-then 
-   echo "Horayyyy!! Today is the weekend. Enjoy yourself! Be ready for the next week."
-else 
-   echo "Today is a weekday. Keep focus on your work."
+
+if [[ ${day,,} == "saturday" || ${day,,} == "sunday" ]]; then
+   echo "Nice! It's the weekend."
+else
+   echo "It's a weekday. Stay focused."
 fi
